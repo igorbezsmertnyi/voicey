@@ -1,0 +1,27 @@
+<div class="create-message">
+  <form [formGroup]="messageForm" class="create-message__form">
+    <mat-form-field class="create-message__row">
+      <mat-select formControlName="lang" placeholder="Select Lang">
+        <mat-option *ngFor="let lang of langs" [value]="lang">
+          {{ lang }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field class="create-message__row create-message__textarea">
+      <textarea matInput formControlName="msg" placeholder="Message text"></textarea>
+    </mat-form-field>
+    
+    <button 
+      mat-raised-button 
+      color="primary" 
+      class="button" 
+      [disabled]="!messageForm.valid" 
+      type="submit" 
+      value="Create Message"
+      (click)="generateMessage()"
+    >
+        Create Message
+    </button>
+  </form>
+</div>

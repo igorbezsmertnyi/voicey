@@ -22,10 +22,7 @@ export class CreateMessageComponent implements OnInit {
   }
 
   ngOnInit() {
-    speechSynthesis.onvoiceschanged = () => {
-      const voices =  window.speechSynthesis.getVoices()
-      this.langs = uniq(voices.map(voice => voice.lang))
-    }
+    this.loadLangs()
   }
 
   generateMessage() {
@@ -42,5 +39,10 @@ export class CreateMessageComponent implements OnInit {
 
   private utoa(str) {
     return window.btoa(encodeURIComponent(str))
+  }
+
+  private loadLangs () {
+    const voices = window.speechSynthesis.getVoices()
+    this.langs = uniq(voices.map(voice => voice.lang))
   }
 }

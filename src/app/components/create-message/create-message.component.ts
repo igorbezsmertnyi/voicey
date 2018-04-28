@@ -23,6 +23,8 @@ export class CreateMessageComponent implements OnInit {
 
   ngOnInit() {
     this.loadLangs()
+
+    speechSynthesis.onvoiceschanged = () => this.loadLangs()
   }
 
   generateMessage() {

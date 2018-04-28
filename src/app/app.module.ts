@@ -12,13 +12,15 @@ import { AppComponent } from './components/app/app.component'
 import { CreateMessageComponent } from './components/create-message/create-message.component'
 import { LinkDialogComponent } from './components/link-dialog/link-dialog.component'
 import { ListenMessageComponent } from './components/listen-message/listen-message.component'
+import { HeaderComponent } from './components/header/header.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateMessageComponent,
     LinkDialogComponent,
-    ListenMessageComponent
+    ListenMessageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

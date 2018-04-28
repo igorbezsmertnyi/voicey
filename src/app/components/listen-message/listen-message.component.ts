@@ -26,7 +26,7 @@ export class ListenMessageComponent implements OnInit {
     const tmp = this.atou(this.link).split(',')
 
     this.lang = tmp[0]
-    this.msg = tmp[1]
+    this.msg = tmp.splice(1, tmp.length).join('')
 
     speech.synthesis(this.msg, this.lang)
   }
